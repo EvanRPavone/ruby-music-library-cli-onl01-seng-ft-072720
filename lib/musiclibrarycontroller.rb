@@ -65,4 +65,20 @@ class MusicLibraryController
       counter += 1
     end
   end
+
+  def list_genres
+   genre_array =[]
+
+    Genre.all.each do |genre|
+      genre_array << genre.name
+    end
+
+    abc_genres = genre_array.sort
+
+    counter = 1
+      abc_genres.each do |genre|
+        puts "#{counter}. #{genre}"
+        counter += 1
+      end
+  end
 end
