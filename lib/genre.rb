@@ -30,4 +30,12 @@ class Genre
     @songs
   end
 
+  def artists
+    a = songs.collect do |song|
+      song.artist
+    end
+    a.uniq
+
+  end
+
 end
