@@ -9,6 +9,11 @@ class Song
     else
       self.artist=(artist)
     end
+    if genre == nil
+      @genre = genre
+    else
+      self.genre=(genre)
+    end
   end
 
   def self.all
