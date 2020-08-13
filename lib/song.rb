@@ -56,4 +56,13 @@ class Song
     end
   end
 
+  def self.find_or_create_by_name(title)
+    song = self.find_by_name(title)
+    if song == nil
+      self.create(title)
+    else
+      song
+    end
+  end
+
 end
