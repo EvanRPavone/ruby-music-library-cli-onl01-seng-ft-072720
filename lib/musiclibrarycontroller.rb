@@ -124,4 +124,31 @@ class MusicLibraryController
       end
     end
   end
+
+  def play_song
+    puts "Which song number would you like to play?"
+    input = gets.chomp
+
+    song_array = []
+
+    abc_songs = Song.all.sort_by{ |song| song.name}
+
+    counter = 1
+    abc_songs.collect do |song|
+      song_array << "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+      counter += 1
+    end
+
+    song_array.each do |song|
+      song_parts = song.split(".")
+      song_number = song_parts[0]
+
+      if song_number == input
+       song_info = song_parts[1].split(" -")
+       song_artist = song_info[0]
+       song_name = song_info[1]
+       puts "Playing#{song_name} by#{song_artist}"
+      end
+    end
+  end
 end
