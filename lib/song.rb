@@ -50,4 +50,10 @@ class Song
     end
   end
 
+  def self.find_by_name(title)
+    @@all.find do |song|
+      song.name == title
+    end
+  end
+
 end
