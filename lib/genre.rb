@@ -19,4 +19,10 @@ class Genre
   def save
     @@all << self
   end
+
+  def self.create(name)
+    created_genre = self.new(name)
+    created_genre.save
+    created_genre
+  end
 end
