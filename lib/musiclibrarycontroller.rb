@@ -4,4 +4,8 @@ class MusicLibraryController
     music = MusicImporter.new(path)
     music.import
   end
+
+  def call
+    puts "Welcome to your music library!"
+  end
 end
