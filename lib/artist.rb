@@ -41,7 +41,7 @@ class Artist
       song.genre
     end
     g.uniq
-  
+
   end
 
 end
