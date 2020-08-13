@@ -38,5 +38,31 @@ class MusicLibraryController
   def list_songs
     @song_array = []
     abc_songs = Song.all.sort_by{ |song| song.name}
+
+    counter = 1
+    abc_songs.collect do |song|
+    @song_array << "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+      counter += 1
+    end
+
+    @song_array.each do |song|
+      puts "#{song}"
+    end
+  end
+
+  def list_artists
+    artist_array =[]
+
+    Artist.all.each do |artist|
+      artist_array << artist.name
+    end
+
+    abc_artists = artist_array.sort
+
+    counter = 1
+    abc_artists.each do |artist|
+      puts "#{counter}. #{artist}"
+      counter += 1
+    end
   end
 end
