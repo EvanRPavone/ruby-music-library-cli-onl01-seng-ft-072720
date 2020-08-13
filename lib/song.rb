@@ -5,4 +5,5 @@ class Song
   def initialize(name, artist = nil, genre = nil)
     @name = name
   end
-  
+
+end
