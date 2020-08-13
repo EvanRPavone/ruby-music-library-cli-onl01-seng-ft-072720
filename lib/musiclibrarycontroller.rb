@@ -102,4 +102,26 @@ class MusicLibraryController
       end
     end
   end
+
+  def list_songs_by_genre
+    puts "Please enter the name of a genre:"
+    input = gets.chomp
+    song_array = []
+    genre = Genre.find_by_name(input)
+
+    if genre != nil
+
+      abc_songs = genre.songs.sort_by{ |song| song.name}
+
+      abc_songs.collect do |song|
+        song_array << "#{song.artist.name} - #{song.name}"
+      end
+
+      counter = 1
+      song_array.each do |song|
+        puts "#{counter}. #{song}"
+        counter += 1
+      end
+    end
+  end
 end
