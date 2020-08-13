@@ -34,4 +34,9 @@ class MusicLibraryController
       end
     end
   end
+
+  def list_songs
+    @song_array = []
+    abc_songs = Song.all.sort_by{ |song| song.name}
+  end
 end
